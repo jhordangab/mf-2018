@@ -1,9 +1,12 @@
 package br.ufg.inf.mf.pratica.dto;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.nio.file.FileSystems;
+import java.nio.file.Paths;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -11,6 +14,11 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import com.google.gson.Gson;
+
+import org.everit.json.schema.Schema;
+import org.everit.json.schema.loader.SchemaLoader;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 
 public abstract class MainDTO {
 
@@ -46,5 +54,21 @@ public abstract class MainDTO {
 
 		StringReader reader = new StringReader(xml);
 		return (MainDTO) unmarshaller.unmarshal(reader);
+	}
+	
+	public boolean valideXml(String xml)
+	{
+		return true;
+	}
+	
+	public void valideJson(String json) throws IOException
+	{
+    	File currentDirectory = new File(new File(".").getAbsolutePath());
+
+		try (InputStream inputStream = getClass().getResourceAsStream(currentDirectory.getCanonicalPath() + "/src/main/java/br/ufg/inf/mf/pratica/dto/schema.json")) {
+			  JSONObject rawSchema = new JSONObject(new JSONTokener(inputStream));
+			  Schema schema = SchemaLoader.load(rawSchema);
+			  schema.validate(new JSONObject(json));
+		}
 	}
 }

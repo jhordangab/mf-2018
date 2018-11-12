@@ -1,12 +1,14 @@
 package br.ufg.inf.mf.pratica.dto;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import javax.xml.bind.JAXBException;
 
 public class App 
 {
-    public static void main( String[] args ) throws JAXBException, FileNotFoundException
+    public static void main( String[] args ) throws JAXBException, IOException
     {
         CertidaoDTO certidaoTo = new CertidaoDTO();
         certidaoTo.setIdentificador("Certidão 1");
@@ -17,8 +19,9 @@ public class App
         certidaoTo.setTermo(19239);
         
     	String json = certidaoTo.toJson();
+    	certidaoTo.valideJson(json);
         System.out.println(json);
-        
+    	
         String xml = certidaoTo.toXml();
         System.out.println(xml);
         
