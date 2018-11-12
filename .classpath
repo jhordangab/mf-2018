@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="aula-3/codigo/br/ufg/inf/mf/pratica"/>
+	<classpathentry kind="src" path="aula-3/csv"/>
+	<classpathentry kind="src" path="aula-3/dir/br/ufg/inf/mf/pratica"/>
+	<classpathentry kind="src" path="aula-3/semana"/>
+	<classpathentry kind="src" path="aula-5/cnes/src/main/java"/>
+	<classpathentry kind="src" path="aula-5/cnes/src/test/java"/>
+	<classpathentry excluding="br/ufg/inf/mf/pratica/dto/" kind="src" path="aula-7/dto/src/main/java"/>
+	<classpathentry kind="src" path="aula-7/dto/src/main/java/br/ufg/inf/mf/pratica/dto"/>
+	<classpathentry kind="src" path="aula-7/dto/src/test/java"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
