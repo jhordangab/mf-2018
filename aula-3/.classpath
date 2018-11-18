@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="codigo/br/ufg/inf/mf/pratica"/>
+	<classpathentry kind="src" path="csv"/>
+	<classpathentry kind="src" path="dir/br/ufg/inf/mf/pratica"/>
+	<classpathentry kind="src" path="semana"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

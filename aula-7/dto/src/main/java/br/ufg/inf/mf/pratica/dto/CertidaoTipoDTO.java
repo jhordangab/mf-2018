@@ -1,9 +1,18 @@
 package br.ufg.inf.mf.pratica.dto;
 
-public class CertidaoTipoDTO {
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+public class CertidaoTipoDTO  extends MainDTO {
+	
+	@XmlElement
 	private int codigo;
 	
+	@XmlElement
 	private String descricao;
 
 	public CertidaoTipoDTO(int codigo, String descricao) {
@@ -12,6 +21,10 @@ public class CertidaoTipoDTO {
 		this.descricao = descricao;
 	}
 
+	public CertidaoTipoDTO() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public int getCodigo() {
 		return codigo;
 	}
